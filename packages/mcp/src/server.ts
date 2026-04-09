@@ -12,6 +12,8 @@ import { z } from 'zod';
 import { registerAnalyticsTools } from './tools/analytics.js';
 import { registerInsightsTools } from './tools/insights.js';
 import { registerAutomationTools } from './tools/automations.js';
+import { registerExportTools } from './tools/exports.js';
+import { registerResources } from './resources.js';
 
 // ---------------------------------------------------------------------------
 // Helpers
@@ -495,6 +497,16 @@ export function createServer(secretKey: string): McpServer {
   registerAnalyticsTools(server, moneroo);
   registerInsightsTools(server, moneroo);
   registerAutomationTools(server, moneroo);
+
+  // -------------------------------------------------------------------------
+  // Phase V3: Exports, Reports
+  // -------------------------------------------------------------------------
+  registerExportTools(server, moneroo);
+
+  // -------------------------------------------------------------------------
+  // Resources: moneroo://dashboard, moneroo://transaction/{id}, moneroo://docs
+  // -------------------------------------------------------------------------
+  registerResources(server);
 
   return server;
 }

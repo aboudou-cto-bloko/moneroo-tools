@@ -1,5 +1,24 @@
 # moneroo-mcp
 
+## 0.4.0
+
+### Minor Changes
+
+- feat(mcp): v3 — exports, reports, and MCP resources (28 tools total)
+
+  Exports & Reports (4):
+  - `export_transactions` — CSV or Excel (.xlsx) export with status/date filters
+  - `generate_invoice` — professional HTML invoice for a payment (printable to PDF)
+  - `generate_report_pdf` — monthly HTML activity report with daily chart, method breakdown, failure analysis
+  - `export_for_accounting` — accounting CSV (generic, Sage-compatible, or FEC format for France)
+
+  MCP Resources (3):
+  - `moneroo://dashboard` — direct link to the Moneroo dashboard
+  - `moneroo://transaction/{id}` — deep link to a specific transaction
+  - `moneroo://docs` — Moneroo API documentation with section links
+
+  Documentation: full README rewrite covering all 28 tools and 3 resources with parameter tables and example prompts.
+
 ## 0.3.0
 
 ### Minor Changes

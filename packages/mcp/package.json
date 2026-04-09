@@ -1,6 +1,6 @@
 {
   "name": "moneroo-mcp",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "MCP Server for Moneroo",
   "keywords": [
     "moneroo",
@@ -51,6 +51,7 @@
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.29.0",
     "moneroo": "workspace:*",
+    "xlsx": "^0.18.5",
     "zod": "^4.3.6"
   },
   "devDependencies": {
