@@ -9,7 +9,7 @@ By [Aboudou Zinsou](https://github.com/aboudouzinsou).
 | Package | npm | Description |
 |---|---|---|
 | [`moneroo`](./packages/sdk) | [![npm](https://img.shields.io/npm/v/moneroo)](https://www.npmjs.com/package/moneroo) | TypeScript SDK for the Moneroo API |
-| [`@moneroo/mcp`](./packages/mcp) | [![npm](https://img.shields.io/npm/v/@moneroo/mcp)](https://www.npmjs.com/package/@moneroo/mcp) | MCP Server — gives AI assistants access to Moneroo |
+| [`moneroo-mcp`](./packages/mcp) | [![npm](https://img.shields.io/npm/v/moneroo-mcp)](https://www.npmjs.com/package/moneroo-mcp) | MCP Server — gives AI assistants access to Moneroo |
 
 ## Development
 

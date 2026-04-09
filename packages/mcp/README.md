@@ -1,4 +1,4 @@
-# @moneroo/mcp
+# moneroo-mcp
 
 MCP Server for the [Moneroo](https://moneroo.io) payment API.
 Gives AI assistants (Claude, Cursor, etc.) the ability to create payments, list transactions, and manage payouts.
@@ -19,7 +19,7 @@ Add to `~/Library/Application Support/Claude/claude_desktop_config.json` (macOS)
   "mcpServers": {
     "moneroo": {
       "command": "npx",
-      "args": ["-y", "@moneroo/mcp"],
+      "args": ["-y", "moneroo-mcp"],
       "env": {
         "MONEROO_SECRET_KEY": "sk_your_secret_key_here"
       }
@@ -37,7 +37,7 @@ Add to `.cursor/mcp.json` in your project or `~/.cursor/mcp.json` globally:
   "mcpServers": {
     "moneroo": {
       "command": "npx",
-      "args": ["-y", "@moneroo/mcp"],
+      "args": ["-y", "moneroo-mcp"],
       "env": {
         "MONEROO_SECRET_KEY": "sk_your_secret_key_here"
       }
@@ -49,7 +49,7 @@ Add to `.cursor/mcp.json` in your project or `~/.cursor/mcp.json` globally:
 ## Usage with other MCP clients
 
 ```bash
-MONEROO_SECRET_KEY=sk_... npx @moneroo/mcp
+MONEROO_SECRET_KEY=sk_... npx moneroo-mcp
 ```
 
 The server communicates over **stdio** (standard MCP transport).

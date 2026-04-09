@@ -1,5 +1,5 @@
 {
-  "name": "@moneroo/mcp",
+  "name": "moneroo-mcp",
   "version": "0.1.0",
   "description": "MCP Server for Moneroo",
   "keywords": ["moneroo", "mcp", "model-context-protocol", "payments", "africa"],
