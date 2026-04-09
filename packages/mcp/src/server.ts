@@ -9,6 +9,9 @@ import {
   ValidationError,
 } from 'moneroo';
 import { z } from 'zod';
+import { registerAnalyticsTools } from './tools/analytics.js';
+import { registerInsightsTools } from './tools/insights.js';
+import { registerAutomationTools } from './tools/automations.js';
 
 // ---------------------------------------------------------------------------
 // Helpers
@@ -485,6 +488,13 @@ export function createServer(secretKey: string): McpServer {
       }
     },
   );
+
+  // -------------------------------------------------------------------------
+  // Phase V2: Analytics, Insights, Automations
+  // -------------------------------------------------------------------------
+  registerAnalyticsTools(server, moneroo);
+  registerInsightsTools(server, moneroo);
+  registerAutomationTools(server, moneroo);
 
   return server;
 }
