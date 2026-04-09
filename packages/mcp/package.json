@@ -6,15 +6,15 @@
   "license": "MIT",
   "author": {
     "name": "Aboudou Zinsou",
-    "url": "https://github.com/aboudouzinsou"
+    "url": "https://github.com/aboudou-cto-bloko"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/aboudouzinsou/moneroo-tools.git",
+    "url": "https://github.com/aboudou-cto-bloko/moneroo-tools.git",
     "directory": "packages/mcp"
   },
-  "homepage": "https://github.com/aboudouzinsou/moneroo-tools#readme",
-  "bugs": "https://github.com/aboudouzinsou/moneroo-tools/issues",
+  "homepage": "https://github.com/aboudou-cto-bloko/moneroo-tools#readme",
+  "bugs": "https://github.com/aboudou-cto-bloko/moneroo-tools/issues",
   "type": "module",
   "exports": {
     ".": {
@@ -28,7 +28,7 @@
     "moneroo-mcp": "./dist/bin.js",
     "mcp": "./dist/bin.js"
   },
-  "files": ["dist", "README.md"],
+  "files": ["dist", "README.md", "LICENSE"],
   "publishConfig": {
     "access": "public"
   },
