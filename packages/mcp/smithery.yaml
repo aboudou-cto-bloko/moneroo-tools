@@ -1,0 +1,25 @@
+# Smithery configuration — https://smithery.ai
+# Allows Smithery to auto-configure and run this MCP server
+
+startCommand:
+  type: stdio
+  configSchema:
+    type: object
+    required:
+      - secretKey
+    properties:
+      secretKey:
+        type: string
+        title: Moneroo Secret Key
+        description: >
+          Your Moneroo API secret key. Get it from app.moneroo.io → Developers → API Keys.
+          Use a sandbox key for testing and a live key for production.
+        format: password
+  commandFunction: |-
+    (config) => ({
+      command: "npx",
+      args: ["-y", "moneroo-mcp@latest"],
+      env: {
+        MONEROO_SECRET_KEY: config.secretKey,
+      },
+    })

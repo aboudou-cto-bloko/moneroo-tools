@@ -1,5 +1,11 @@
 # moneroo-mcp
 
+## 0.4.1
+
+### Patch Changes
+
+- chore(mcp): remove MCP resources (not needed), add smithery.yaml for registry submission
+
 ## 0.4.0
 
 ### Minor Changes
