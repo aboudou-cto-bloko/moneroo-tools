@@ -1,8 +1,14 @@
 {
   "name": "moneroo-mcp",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "MCP Server for Moneroo",
-  "keywords": ["moneroo", "mcp", "model-context-protocol", "payments", "africa"],
+  "keywords": [
+    "moneroo",
+    "mcp",
+    "model-context-protocol",
+    "payments",
+    "africa"
+  ],
   "license": "MIT",
   "author": {
     "name": "Aboudou Zinsou",
@@ -28,7 +34,11 @@
     "moneroo-mcp": "./dist/bin.js",
     "mcp": "./dist/bin.js"
   },
-  "files": ["dist", "README.md", "LICENSE"],
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "publishConfig": {
     "access": "public"
   },
