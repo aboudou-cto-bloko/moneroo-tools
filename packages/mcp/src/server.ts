@@ -94,12 +94,7 @@ export function createServer(secretKey: string): McpServer {
           .max(100)
           .optional()
           .describe('Number of results to return (1–100, default 15)'),
-        page: z
-          .number()
-          .int()
-          .min(1)
-          .optional()
-          .describe('Page number for pagination (default 1)'),
+        page: z.number().int().min(1).optional().describe('Page number for pagination (default 1)'),
         status: z
           .enum(['initiated', 'pending', 'cancelled', 'failed', 'success'])
           .optional()
@@ -136,7 +131,9 @@ export function createServer(secretKey: string): McpServer {
         'Retrieve the full details of a payment transaction by its ID. ' +
         'Returns status, amount, currency, customer info, payment method, and gateway details.',
       inputSchema: {
-        payment_id: z.string().describe('The unique ID of the payment transaction (e.g. k4su1ii7abdz)'),
+        payment_id: z
+          .string()
+          .describe('The unique ID of the payment transaction (e.g. k4su1ii7abdz)'),
       },
     },
     async ({ payment_id }) => {
@@ -218,26 +215,19 @@ export function createServer(secretKey: string): McpServer {
           .url()
           .describe('URL to redirect the customer to after payment completes or fails'),
         customer_email: z.string().email().describe("Customer's email address"),
-        customer_first_name: z
-          .string()
-          .optional()
-          .describe("Customer's first name"),
-        customer_last_name: z
-          .string()
-          .optional()
-          .describe("Customer's last name"),
+        customer_first_name: z.string().optional().describe("Customer's first name"),
+        customer_last_name: z.string().optional().describe("Customer's last name"),
         methods: z
           .array(z.string())
           .optional()
           .describe(
             'Restrict to specific payment method shortcodes (e.g. ["mtn_bj", "wave_sn"]). ' +
-            'Omit to allow all available methods.',
+              'Omit to allow all available methods.',
           ),
         metadata: z
           .record(z.string(), z.string())
           .optional()
           .describe('Custom key-value data attached to the transaction (string values only)'),
-
       },
     },
     async ({
@@ -293,12 +283,7 @@ export function createServer(secretKey: string): McpServer {
           .max(100)
           .optional()
           .describe('Number of results to return (1–100, default 15)'),
-        page: z
-          .number()
-          .int()
-          .min(1)
-          .optional()
-          .describe('Page number for pagination (default 1)'),
+        page: z.number().int().min(1).optional().describe('Page number for pagination (default 1)'),
         status: z
           .enum(['initiated', 'pending', 'failed', 'success'])
           .optional()
@@ -406,10 +391,7 @@ export function createServer(secretKey: string): McpServer {
           .int()
           .positive()
           .describe('Payout amount as a positive integer (e.g. 1000 for 1000 XOF)'),
-        currency: z
-          .string()
-          .length(3)
-          .describe('ISO 4217 currency code (e.g. XOF, USD, KES)'),
+        currency: z.string().length(3).describe('ISO 4217 currency code (e.g. XOF, USD, KES)'),
         description: z
           .string()
           .min(1)
@@ -418,7 +400,7 @@ export function createServer(secretKey: string): McpServer {
           .string()
           .describe(
             'Payout method shortcode (e.g. "mtn_bj", "wave_sn", "orange_ci"). ' +
-            'Use "moneroo_payout_demo" in sandbox.',
+              'Use "moneroo_payout_demo" in sandbox.',
           ),
         customer_email: z.string().email().describe("Recipient's email address"),
         customer_first_name: z.string().describe("Recipient's first name"),
@@ -428,7 +410,7 @@ export function createServer(secretKey: string): McpServer {
           .optional()
           .describe(
             'Recipient phone number in international format (e.g. "22951345020"). ' +
-            'Required for most mobile money methods.',
+              'Required for most mobile money methods.',
           ),
         recipient_account_number: z
           .string()
@@ -462,7 +444,7 @@ export function createServer(secretKey: string): McpServer {
           return toError(
             new Error(
               'recipient_msisdn is required for most payout methods. ' +
-              'Provide recipient_account_number for moneroo_payout_demo.',
+                'Provide recipient_account_number for moneroo_payout_demo.',
             ),
           );
         }
@@ -481,9 +463,7 @@ export function createServer(secretKey: string): McpServer {
           ...(metadata ? { metadata } : {}),
         });
 
-        return toText(
-          JSON.stringify({ id: response.data.id, message: response.message }, null, 2),
-        );
+        return toText(JSON.stringify({ id: response.data.id, message: response.message }, null, 2));
       } catch (error) {
         return toError(error);
       }
@@ -501,7 +481,6 @@ export function createServer(secretKey: string): McpServer {
   // Phase V3: Exports, Reports
   // -------------------------------------------------------------------------
   registerExportTools(server, moneroo);
-
 
   return server;
 }
