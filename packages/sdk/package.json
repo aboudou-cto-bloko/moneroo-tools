@@ -1,8 +1,14 @@
 {
   "name": "moneroo",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "TypeScript SDK for the Moneroo API",
-  "keywords": ["moneroo", "payment", "sdk", "africa", "mobile-money"],
+  "keywords": [
+    "moneroo",
+    "payment",
+    "sdk",
+    "africa",
+    "mobile-money"
+  ],
   "license": "MIT",
   "author": {
     "name": "Aboudou Zinsou",
@@ -26,7 +32,11 @@
   "main": "./dist/cjs/index.cjs",
   "module": "./dist/esm/index.js",
   "types": "./dist/types/index.d.ts",
-  "files": ["dist", "README.md", "LICENSE"],
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "publishConfig": {
     "access": "public"
   },
