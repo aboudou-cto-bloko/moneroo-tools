@@ -1,0 +1,46 @@
+{
+  "name": "moneroo",
+  "version": "0.1.0",
+  "description": "TypeScript SDK for the Moneroo API",
+  "keywords": ["moneroo", "payment", "sdk", "africa", "mobile-money"],
+  "license": "MIT",
+  "author": {
+    "name": "Aboudou Zinsou",
+    "url": "https://github.com/aboudouzinsou"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aboudouzinsou/moneroo-tools.git",
+    "directory": "packages/sdk"
+  },
+  "homepage": "https://github.com/aboudouzinsou/moneroo-tools#readme",
+  "bugs": "https://github.com/aboudouzinsou/moneroo-tools/issues",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.cjs",
+      "types": "./dist/types/index.d.ts"
+    }
+  },
+  "main": "./dist/cjs/index.cjs",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/types/index.d.ts",
+  "files": ["dist", "README.md"],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "pnpm build:esm && pnpm build:cjs && pnpm build:types",
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "build:types": "tsc -p tsconfig.types.json",
+    "clean": "rm -rf dist *.tsbuildinfo",
+    "test": "echo \"No tests yet\"",
+    "lint": "eslint src --ext .ts"
+  },
+  "devDependencies": {
+    "@types/node": "^18.0.0",
+    "typescript": "^5.5.0"
+  }
+}

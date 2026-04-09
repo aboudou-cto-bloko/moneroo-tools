@@ -1,0 +1,50 @@
+{
+  "name": "@moneroo/mcp",
+  "version": "0.1.0",
+  "description": "MCP Server for Moneroo",
+  "keywords": ["moneroo", "mcp", "model-context-protocol", "payments", "africa"],
+  "license": "MIT",
+  "author": {
+    "name": "Aboudou Zinsou",
+    "url": "https://github.com/aboudouzinsou"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aboudouzinsou/moneroo-tools.git",
+    "directory": "packages/mcp"
+  },
+  "homepage": "https://github.com/aboudouzinsou/moneroo-tools#readme",
+  "bugs": "https://github.com/aboudouzinsou/moneroo-tools/issues",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "moneroo-mcp": "./dist/bin.js",
+    "mcp": "./dist/bin.js"
+  },
+  "files": ["dist", "README.md"],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "clean": "rm -rf dist *.tsbuildinfo",
+    "test": "echo \"No tests yet\"",
+    "lint": "eslint src --ext .ts"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "moneroo": "workspace:*",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@types/node": "^18.0.0",
+    "typescript": "^5.5.0"
+  }
+}
